@@ -18,7 +18,6 @@ def print_msg(dict_sc, total_file_size):
         if val != 0:
             print("{}: {}".format(key, val))
 
-
 total_file_size = 0
 code = 0
 counter = 0
