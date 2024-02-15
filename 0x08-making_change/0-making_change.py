@@ -1,36 +1,22 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
 """
-Make a change
+Making change
 """
 
 
 def makeChange(coins, total):
-    """
-    Calculate the minimum number of coins needed to make a given total.
-
-    Parameters:
-    - coins (list): A list of coin denominations available.
-    - total (int): The target total amount.
-
-    Returns:
-    - int: The minimum number of coins needed to make the total amount.
-    Returns -1 if it is not possible to make the total amount with the given coins.
-    """
-=======
-
-def makeChange(coins, total):
->>>>>>> 5c9c29c8eb541afe5d672f37c063515c4eb9b7f5
-    if total < 0:
+    """ fewest number of coins needed to meet total """
+    if total <= 0:
         return 0
-    if total == 0:
-        return 0
-
-    dp = [float("inf")] * (total + 1)
-    dp[0] = 0
-
+    # sort the coins in descending order
+    coins.sort(reverse=True)
+    change = 0
     for coin in coins:
-        for i in range(coin, total + 1):
-            dp[i] = min(dp[i], dp[i - coin] + 1)
-
-    return dp[total] if dp[total] != float("inf") else -1
+        if total <= 0:
+            break
+        temp = total // coin
+        change += temp
+        total -= (temp * coin)
+    if total != 0:
+        return -1
+    return change
