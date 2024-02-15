@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """
 Make a change
 """
@@ -16,6 +17,10 @@ def makeChange(coins, total):
     - int: The minimum number of coins needed to make the total amount.
     Returns -1 if it is not possible to make the total amount with the given coins.
     """
+=======
+
+def makeChange(coins, total):
+>>>>>>> 5c9c29c8eb541afe5d672f37c063515c4eb9b7f5
     if total < 0:
         return 0
     if total == 0:
